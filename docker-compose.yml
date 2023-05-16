@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  bard-slackbot:
+    build:
+      context: .
+    container_name: bard-slackbot
+    environment:
+      SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN}
+      SLACK_APP_TOKEN: ${SLACK_APP_TOKEN}
+      BARD_API_KEY: ${BARD_API_KEY}
+    volumes:
+      - ./app:/usr/src/app
+
